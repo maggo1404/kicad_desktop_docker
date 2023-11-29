@@ -4,13 +4,13 @@ LABEL maintainer="nomumu <nomumu-github@koso2-dan.ddo.jp>"
 RUN apt-get update -y && apt-get install -y apt-utils
 RUN apt-get update -y && apt-get install -y tzdata
 RUN apt-get update -y && apt-get install -y locales \
-    && apt-get install -y language-pack-ja language-pack-en \
-    && locale-gen ja_JP.UTF-8 \
-    && update-locale LANG=ja_JP.UTF-8
-ENV TZ=Asia/Tokyo \
+    && apt-get install -y language-pack-de language-pack-en \
+    && locale-gen de_DE.UTF-8 \
+    && update-locale LANG=de_DE.UTF-8
+ENV TZ=Europa/Berlin \
     DISPLAY=:0 \
-    LANGUAGE=ja_JP.UTF-8 \
-    LC_ALLE=ja_JP.UTF-8 \
+    LANGUAGE=de_DE.UTF-8 \
+    LC_ALLE=de_DE.UTF-8 \
     DEBIAN_FRONTEND=noninteractive
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 

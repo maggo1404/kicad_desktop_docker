@@ -33,7 +33,7 @@ RUN cd /tmp \
 
 RUN add-apt-repository -y ppa:kicad/kicad-6.0-releases \
     && apt-get update -y \
-    && apt-get install --install-recommends kicad kicad-doc-ja -y\
+    && apt-get install --install-recommends kicad kicad-doc-de -y\
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN cd /usr/share/ \
     && git clone -b 5.1 https://github.com/KiCad/kicad-i18n.git \
